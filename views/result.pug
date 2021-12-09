@@ -1,0 +1,67 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Bereken je emissie
+        style 
+            include ../styles/styles.css
+        style 
+            include ../styles/results.css
+    body 
+        main 
+            section(id="overview", class="yellow full-height")
+                h1 
+                    | <span>Jij</span> stoot jaarlijks 
+                    span=`${ totalEmissions } kg co²` 
+                    |  uit onderweg naar school! 
+                p Hier staat een overzicht van <span>jouw</span> jaarlijkse uitstoot. 
+                div(id="overview-container")
+                    each item in overview 
+                        div(class="overview-item-container")
+                            div(class="overview-vehicle-container")
+                                span=item.emoji
+                                p=item.vehicle
+                            p=`${item.emission} kg co²`
+                p Kijk hieronder om een beeld te krijgen hoeveel co² dit niet wel is! 
+            
+            section(class="purple full-height")
+                h2
+                    | <span>Jouw</span> jaarlijkse uitstoot onderweg naar school staat gelijk aan het produceren van 
+                    span=comparison.bigMac
+                    |  Big Macs.
+                p Hier een tekste over hoe veel het er wel niet zijn! 
+                p Hier een tip hoe je je uitstoot onderweg kan verleinen. 
+
+            section(class="orange full-height")
+                if trainDistance > 0
+                    h2 
+                        | De 
+                        span=trainDistance
+                        |  km die jij dagelijks met de trein reist stoot <span>0 kg</span> co² uit! 
+                else 
+                    h2 Wist <span>jij</span> dat de treinen in Nederland <span>co² neutraal</span> rijden? 
+                p Vanaf <span>2017</span> rijden de treinen in Nederland <span>co² neutraal</span>. Onze treinen rijden voor <span>100%</span> op <span>windenergie</span>. Deze stroom wordt onder andere geproduceerd in <span>Nederland</span>, <span>Zweden</span> en <span>Finland</span>. Hiervoor heeft <span>NS</span> met <span>Eneco</span> een contract gesloten, dat dit garandeert.
+                p Lees <a href="https://www.ns.nl/over-ns/duurzaamheid/fossielvrij/groene-energie-voor-trein-bus-en-station.html">hier</a> meer over op de website van <span>NS</span>. 
+            
+            section(class="yellow full-height")
+                h2 
+                    | Voor <span>jouw</span> jaarlijkse uitstoot onderweg naar school kan er ook 
+                    span=comparison.chicken
+                    |  kilo kippenvlees of 
+                    span=comparison.beef 
+                    |  kilo rundvlees geproduceerd worden. 
+                p Hier een stuk tekst over hoe veel dat wel niet is.
+                p Hier een tip hoe je je uitstoot onderweg kan verleinen. 
+            
+            section(class="purple full-height")
+                h2 
+                    | Om <span>jouw</span> jaarlijkse co² uitstoot onderweg naar school te compenseren zijn er 
+                    span=comparison.tree 
+                    |  bomen nodig. 
+                p Hier een stuk tekst over iets. 
+
+            footer(class="orange")
+                h2 Deel je uitkomst met je <span>vrienden</span>!
+                button Share

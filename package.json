@@ -1,0 +1,26 @@
+{
+  "name": "data-week",
+  "version": "1.0.0",
+  "description": "Uitleg over opdracht en website.",
+  "main": "index.js",
+  "scripts": {
+    "start-server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Steinberg99/data-week.git"
+  },
+  "author": "Stein Bergervoet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Steinberg99/data-week/issues"
+  },
+  "homepage": "https://github.com/Steinberg99/data-week#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

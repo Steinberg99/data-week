@@ -1,0 +1,14 @@
+{
+  "gasCar": 202,
+  "dieselCar": 176,
+  "hybridCar": 145,
+  "electricCar": 77,
+  "motorcycle": 119,
+  "gasScooter": 48,
+  "electricScooter": 17,
+  "electricBike": 6,
+  "train": 0,
+  "bus": 140,
+  "subway": 74,
+  "tram": 66
+}

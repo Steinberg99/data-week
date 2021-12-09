@@ -1,0 +1,104 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Bereken je emissie!
+        style 
+            include ../styles/styles.css
+    body 
+        main 
+            section(id="intro-section")
+                h1 
+                    | <span>Stein</span> stoot jaarlijks 
+                    span 1379 kg co² 
+                    | uit op zijn reis naar school. 
+                h2 Doe jij dit beter? 
+                a(href="#calculate-emissions") Bereken jouw uitstoot!
+            section(id="calculate-emissions")
+                form(method="post", action="/result")
+                    section(class="orange")
+                        div(class="section-header")
+                            h2 Openbaar vervoer 
+                            span &#x1F6A0;
+                        p Vul hier je reiskilometers in als je met het openbaar vervoer naar school reist.
+                        div(class="divider")
+                        div
+                            label(for="train") Trein
+                            div(class="input-container")
+                                input(id="train", value="0", type="number", name="train", min="0", max="100")
+                                span km
+                            label(for="bus") Bus
+                            div(class="input-container")
+                                input(id="bus", value="0", type="number", name="bus", min="0", max="100")
+                                span km
+                            label(for="subway") Metro
+                            div(class="input-container")
+                                input(id="subway", value="0", type="number", name="subway", min="0", max="100")
+                                span km
+                            label(for="tram") Tram
+                            div(class="input-container")
+                                input(id="tram", value="0", type="number", name="tram", min="0", max="100")
+                                span km
+                        div(class="divider")
+                    section(class="yellow")
+                        div(class="section-header")
+                            h2 Tweewielers
+                            span 🛵
+                        p Vul hier je reiskilometers in als je met een tweewieler naar school reist.
+                        div(class="divider")
+                        div
+                            label(for="motorcycle") Motor
+                            div(class="input-container")
+                                input(id="motorcycle", value="0", type="number", name="motorcycle", min="0", max="100")
+                                span km
+                            label(for="gasScooter") Benzine scooter
+                            div(class="input-container")
+                                input(id="gasScooter", value="0", type="number", name="gasScooter", min="0", max="100")
+                                span km
+                            label(for="electricScooter") Elektrische scooter
+                            div(class="input-container")
+                                input(id="electricScooter", value="0", type="number", name="electricScooter", min="0", max="100")
+                                span km
+                            label(for="electricBike") Elektrische fiets
+                            div(class="input-container")
+                                input(id="electricBike", value="0", type="number", name="electricBike", min="0", max="100")
+                                span km
+                        div(class="divider bottom-divider")
+                    section(class="purple") 
+                        div(class="section-header")
+                            h2 Auto's
+                            span 🚘
+                        p Vul hier je reiskilometers in als je met de auto naar school reist.
+                        div(class="divider")
+                        div 
+                            label(for="gasCar") Benzine auto
+                            div(class="input-container")
+                                input(id="gasCar", value="0", type="number", name="gasCar", min="0", max="100")
+                                span km
+                            label(for="dieselCar") Diesel auto
+                            div(class="input-container")
+                                input(id="dieselCar", value="0", type="number", name="dieselCar", min="0", max="100")
+                                span km
+                            label(for="hybridCar") Hybride auto 
+                            div(class="input-container")
+                                input(id="hybridCar", value="0", type="number", name="hybridCar", min="0", max="100")
+                                span km
+                            label(for="electricCar") Elektrische auto
+                            div(class="input-container")
+                                input(id="electricCar", value="0", type="number", name="electricCar", min="0", max="100")
+                                span km
+                        div(class="divider bottom-divider")
+                    section(class="orange")
+                        h2 Reisdagen per week
+                        p Vul hier het aantal gemiddeld aantal reisdagen dat je per week naar school gaat in. Bij de berekening wordt er van 38 lesweken per jaar uitgegaan.
+                        div(class="divider")
+                        div
+                            label(for="days") Dagen per week
+                            div(class="input-container")
+                                input(id="days", value="1", type="number", name="days", min="1", max="5")
+                                span(id="last-span") Dagen
+                        div(id="submit-container")
+                            input(type="submit", value="Bereken mijn uitstoot!")
+                        div(class="divider bottom-divider")

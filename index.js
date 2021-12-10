@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 4200;
+const port = process.env.PORT || 4200;
 const emissionData = require("./emissionData.json");
 const comparisonData = require("./comparisonData.json");
 

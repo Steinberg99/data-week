@@ -21,6 +21,8 @@ app.post("/result", (req, res) => {
   const comparison = calculateComparison(totalEmissions); // Calculate the comparison values.
   const emojiCount = determineEmojiCount(trainDistance, comparison);
 
+  console.log(emojiCount);
+
   // Render the results page.
   res.render("result", {
     trainDistance: trainDistance,
@@ -148,7 +150,8 @@ function determineEmojiCount(trainDistance, comparison) {
   trainDistance >= maxEmoji || trainDistance == 0
     ? (emojiCount["train"] = maxEmoji)
     : (emojiCount["train"] = parseInt(trainDistance));
-  if ((emojiCount["beef"] += emojiCount["chicken"] > maxEmoji)) {
+  const meatTotal = emojiCount["beef"] + emojiCount["chicken"];
+  if (meatTotal > maxEmoji) {
     emojiCount["chicken"] = maxEmoji - emojiCount["beef"];
   }
   return emojiCount;

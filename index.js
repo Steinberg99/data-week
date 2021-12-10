@@ -21,8 +21,6 @@ app.post("/result", (req, res) => {
   const comparison = calculateComparison(totalEmissions); // Calculate the comparison values.
   const emojiCount = determineEmojiCount(trainDistance, comparison);
 
-  console.log(emojiCount);
-
   // Render the results page.
   res.render("result", {
     trainDistance: trainDistance,

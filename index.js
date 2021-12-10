@@ -19,6 +19,7 @@ app.post("/result", (req, res) => {
   const totalEmissions = calculateTotalEmissions(emissions, req.body.days); // Calculate total emissions.
   const overview = determineOverview(emissions, trainDistance); // Determine the emissions overview.
   const comparison = calculateComparison(totalEmissions); // Calculate the comparison values.
+  const emojiCount = determineEmojiCount(trainDistance, comparison);
 
   // Render the results page.
   res.render("result", {
@@ -26,7 +27,8 @@ app.post("/result", (req, res) => {
     emissions: emissions,
     totalEmissions: totalEmissions,
     overview: overview,
-    comparison: comparison
+    comparison: comparison,
+    emojiCount: emojiCount
   });
 });
 
@@ -132,6 +134,24 @@ function calculateComparison(totalEmissions) {
     comparison[key] = Math.floor(totalEmissions / comparisonData[key]);
   });
   return comparison;
+}
+
+// Function to determine the emoji count.
+function determineEmojiCount(trainDistance, comparison) {
+  let emojiCount = {};
+  const maxEmoji = 88;
+  Object.keys(comparison).forEach(key => {
+    comparison[key] <= maxEmoji
+      ? (emojiCount[key] = comparison[key])
+      : (emojiCount[key] = maxEmoji);
+  });
+  trainDistance >= maxEmoji || trainDistance == 0
+    ? (emojiCount["train"] = maxEmoji)
+    : (emojiCount["train"] = parseInt(trainDistance));
+  if ((emojiCount["beef"] += emojiCount["chicken"] > maxEmoji)) {
+    emojiCount["chicken"] = maxEmoji - emojiCount["beef"];
+  }
+  return emojiCount;
 }
 
 app.listen(port, () => {

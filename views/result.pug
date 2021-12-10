@@ -31,9 +31,15 @@ html(lang="en")
                     | <span>Jouw</span> jaarlijkse uitstoot onderweg naar school staat gelijk aan het produceren van 
                     span=comparison.bigMac
                     |  Big Macs.
-                p Hier een tekste over hoe veel het er wel niet zijn! 
+                p Hier een tekst over hoe veel het er wel niet zijn! 
                 p Hier een tip hoe je je uitstoot onderweg kan verleinen. 
-
+                div(class="emoji-background")
+                    div(class="emoji-filter emoji-filter-purple")
+                    - let i = 0; 
+                    div(class="emoji-container")
+                        while i < emojiCount.bigMac
+                            - i++
+                            p 🍔
             section(class="orange full-height")
                 if trainDistance > 0
                     h2 
@@ -44,7 +50,13 @@ html(lang="en")
                     h2 Wist <span>jij</span> dat de treinen in Nederland <span>co² neutraal</span> rijden? 
                 p Vanaf <span>2017</span> rijden de treinen in Nederland <span>co² neutraal</span>. Onze treinen rijden voor <span>100%</span> op <span>windenergie</span>. Deze stroom wordt onder andere geproduceerd in <span>Nederland</span>, <span>Zweden</span> en <span>Finland</span>. Hiervoor heeft <span>NS</span> met <span>Eneco</span> een contract gesloten, dat dit garandeert.
                 p Lees <a href="https://www.ns.nl/over-ns/duurzaamheid/fossielvrij/groene-energie-voor-trein-bus-en-station.html">hier</a> meer over op de website van <span>NS</span>. 
-            
+                div(class="emoji-background")
+                    div(class="emoji-filter emoji-filter-orange")
+                    - let j = 0; 
+                    div(class="emoji-container")
+                        while j < emojiCount.train
+                            - j++
+                            p 🚆
             section(class="yellow full-height")
                 h2 
                     | Voor <span>jouw</span> jaarlijkse uitstoot onderweg naar school kan er ook 
@@ -54,14 +66,34 @@ html(lang="en")
                     |  kilo rundvlees geproduceerd worden. 
                 p Hier een stuk tekst over hoe veel dat wel niet is.
                 p Hier een tip hoe je je uitstoot onderweg kan verleinen. 
-            
+                div(class="emoji-background")
+                    div(class="emoji-filter emoji-filter-yellow")
+                    - let k = 0; 
+                    - let l = 0;
+                    div(class="emoji-container")
+                        while k < emojiCount.beef
+                            - k++
+                            p 🐮
+                        while l < emojiCount.chicken
+                            - l ++ 
+                            p 🐔
+
             section(class="purple full-height")
                 h2 
                     | Om <span>jouw</span> jaarlijkse co² uitstoot onderweg naar school te compenseren zijn er 
                     span=comparison.tree 
                     |  bomen nodig. 
-                p Hier een stuk tekst over iets. 
-
+                p 
+                    | Een volwassen boom neemt ongeveer <span>22 kilo co²</span> op per jaar. Dit betekent dat er op jaarbasis 
+                    span=comparison.tree 
+                    |  bomen nodig zijn om jouw uitstoot onderweg naar school te compenseren. 
+                div(class="emoji-background")
+                    div(class="emoji-filter emoji-filter-purple")
+                    - let m = 0; 
+                    div(class="emoji-container")
+                        while m < emojiCount.tree
+                            - m++
+                            p 🌲
             footer(class="orange")
                 h2 Deel je uitkomst met je <span>vrienden</span>!
                 button Share

@@ -2,7 +2,7 @@
 
 ## The concept
 
-Concept explanation.
+This website allows students to calculate the total emissions produced during their round trip to school. This website was produced in two and a half days during the one week course Data week.
 
 ## How to install
 
